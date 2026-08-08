@@ -41,3 +41,12 @@ FROM employees
 INNER JOIN departments
 ON employees.department_id = departments.department_id
 WHERE departments.department_name = 'IT';
+
+
+-- JOIN + GROUP BY
+
+SELECT departments.department_name, COUNT(employees.id) AS employee_count
+FROM employees
+INNER JOIN departments
+ON employees.department_id = departments.department_id
+GROUP BY departments.department_name;
